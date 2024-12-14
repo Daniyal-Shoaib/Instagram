@@ -1,7 +1,3 @@
-//import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
-import 'dart:ui';
-
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class UiHelper {
@@ -9,21 +5,35 @@ class UiHelper {
   static customImage({required String imgUrl}) {
     return Image.asset("assets/images/$imgUrl");
   }
-
+  //code For IconsImager
+  static iconImage({required String iconUrl}) {
+    return Image.asset("assets/icons/$iconUrl");
+  }
+  //codeForDrawer
+  static iconDrawer({required String iconUrl}) {
+    return Image.asset("assets/drawer_icons/$iconUrl");
+  }
   //Code For Custom Text_Field
   static customTextField({
     required TextEditingController controller,
     required String text,
     required bool toHide,
+    double width = 343,
+    double height = 44,
+    Color backgroundColor = const Color(0xff121212),
+    Color borderColor = const Color(0xff616161),
+
+
+
   }) {
     return Container(
-      width: 343,
-      height: 44,
+      width: width,
+      height:height,
       decoration: BoxDecoration(
-        color: const Color(0xff121212),
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(5),
         border: Border.all(
-          color: Colors.grey.shade700,
+          color: borderColor,
         ),
       ),
       child: Padding(
@@ -31,10 +41,12 @@ class UiHelper {
         child: TextField(
           controller: controller,
           obscureText: toHide,
+
           decoration: InputDecoration(
             hintText: text,
             hintStyle: const TextStyle(fontSize: 14, color: Colors.white),
             border: InputBorder.none,
+
           ),
         ),
       ),

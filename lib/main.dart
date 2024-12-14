@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/search/search_screen.dart';
 
 import 'screens/splash/splash_screen.dart';
 

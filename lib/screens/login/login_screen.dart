@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../helpers/uihelper.dart';
 import '../SignUp/signup_screen.dart';
+import '../bottom_nav/bottomnavigator.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -56,7 +57,13 @@ class LoginScreen extends StatelessWidget {
               height: 10,
             ),
             UiHelper.customButton(
-              callback: () {},
+              callback: () {
+                Navigator.push(
+                    context, MaterialPageRoute(
+                    builder: (context)=> const BottomNavigator(),
+                )
+                );
+              },
               buttonName: "Log in",
             ),
             const SizedBox(
